@@ -14,7 +14,7 @@ defmodule Prometheus.Erlang do
     end
   end
 
-  if Version.match?(System.version(), "< 1.14.0") do
+  if Version.match?(System.version(), "< 1.14.0-rc.0") do
     def defdelegate_each(fun, opts), do: Kernel.Utils.defdelegate(fun, opts)
   else
     def defdelegate_each(fun, opts), do: Kernel.Utils.defdelegate_each(fun, opts)
